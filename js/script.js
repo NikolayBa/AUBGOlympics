@@ -303,6 +303,8 @@ $(document).ready(function($) {
 
 	}
 
+		//automatically updates the years of the copyright			
+		$(".copyright").text("\u00A9 Copyright " + new Date().getFullYear() + " AUBG OLYMPICS. All rights reserved.");
 });
 
 /* ---------------------------------------------------------------------- */
