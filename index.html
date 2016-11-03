@@ -151,7 +151,7 @@
 								data-splitout="none"
 								data-elementdelay="0.1"
 								data-endelementdelay="0.1"
-								style="z-index: 8; max-width: auto; max-height: auto; white-space: nowrap;">AUBG OLYMPICS <br><span>Applications are now closed! </span> 
+								style="z-index: 8; max-width: auto; max-height: auto; white-space: nowrap;">AUBG OLYMPICS <br><span>Self-Defense Workshop </span> 
 							</div>
 
 							<!-- LAYER NR. 2 -->
@@ -179,7 +179,7 @@ $(function(){
 		countdown: true,
 		language: 'Custom'
 	};  
-	var countdown = 1474761599 - ((new Date().getTime())/1000); // from: 04/24/2016 09:00 am +0200
+	var countdown = (new Date("November 16, 2016 20:00:00").getTime()/1000) - (new Date().getTime()/1000);// from: 04/24/2016 09:00 am +0200
 	countdown = Math.max(1, countdown);
 	$('.clock-builder-output').FlipClock(countdown, opts);
 });
