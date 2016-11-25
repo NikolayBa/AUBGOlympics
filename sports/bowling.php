@@ -7,12 +7,12 @@
     $last_name1 = $_POST['lname1'];
 
    	$subject = "Bowling";
-  	$message = "Team: ".$team_name.PHP_EOL."Player 1: ". $first_name1 . " " . $last_name1 . " ". $from1.PHP_EOL;
+  	$message = "Player: ". $first_name1 . " " . $last_name1 . " ". $from1.PHP_EOL;
 
     $headers = "From:" . $from1;
   	mail($to,$subject,$message,$headers);
     try{
-    $file = fopen("/www/aubgolympics.com/signups/volleyball.txt", 'ab');
+    $file = fopen("/www/aubgolympics.com/signups/bowling.txt", 'ab');
     fwrite($file, "===========START===========".PHP_EOL);
     fwrite($file, $message);
     fwrite($file, "============END============".PHP_EOL);
@@ -23,7 +23,7 @@
     }
     echo "Thank you for registering! You will now be redirected";
     echo "<script>";
-    echo "window.location.href='https://www.aubgolympics.com';</script>";
+    echo "window.location.href='http://www.aubgolympics.com';</script>";
     die();
     } else {
     echo "Empty Fields";
