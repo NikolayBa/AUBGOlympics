@@ -34,7 +34,7 @@
     $headers = "From:" . $from1;
   	mail($to,$subject,$message,$headers);
     try{
-    $file = fopen("/home/aubgolympics/signups/volleyball.txt", 'ab');
+    $file = fopen("/www/aubgolympics.com/signups/volleyball.txt", 'ab');
     fwrite($file, "===========START===========".PHP_EOL);
     fwrite($file, $message);
     fwrite($file, "============END============".PHP_EOL);
@@ -45,8 +45,7 @@
     }
     echo "Thank you for registering! You will now be redirected";
     echo "<script>";
-    echo "window.location.href='https://www.aubgolympics.com';
-</script>";
+    echo "window.location.href='http://www.aubgolympics.com';</script>";
     die();
     } else {
     echo "Empty Fields";

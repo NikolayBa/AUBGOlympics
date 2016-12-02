@@ -120,6 +120,7 @@
 			</nav>
 		</header>
 		<!-- End Header -->
+
 		<!-- page-banner-section 
 			================================================== -->
 		<section class="page-banner-section">
@@ -143,7 +144,7 @@
 								<li><a href="soccer.html">Soccer</a></li>
 								<li><a href="tennis.html">Tennis Singles</a></li>
 								<li><a href="table.html">Table Tennis</a></li>
-								<li><a href="bowling.html">Bowling</a></li>
+								<li><a class="active" href="bowling.html">Bowling</a></li>
 								<li><a href="volley.html">Volleyball (6vs6)</a></li>
 								<li><a href="dodgeball.html">Dodgeball (5vs5)</a></li>
 								<li><a href="dash.html">100 Meters Dash</a></li>
@@ -153,7 +154,7 @@
 								<li><a href="power.html">Powerlifting</a></li>
 								<li><a href="tug.html">Tug of War</a></li>
 								<li><a href="skills.html">Skills Challenge</a></li>
-								<li><a class="active" href="marathon.html">Marathon</a></li>
+								<li><a href="marathon.html">Marathon</a></li>
 								<li><a href="swimming.html">Swimming</a></li>
 							</ul>
 							
@@ -165,29 +166,31 @@
 								<div class="col-md-6">
 									<div class="services-post">
 										<div class="photo" >
-										<img src="marathon.jpg">
-										<h2>Marathon</h2>
-										<p>How far can you go? This is a 3.8km distance running event, organized on the day before the AUBG Olympic Games. Participants compete in female and male division. Here the ones who win are not the fastest ones, but the ones who endure. Stretch well because the good preparation is a sign for potential. </p>
-										<a href="rules/marathon.docx" download>Read the rules!</a>
+										<img src="bowling.jpg">
+										<h2>Bowling</h2>
+										<p>Bowling refers to a series of sports or leisure activities in which a player rolls or throws a bowling ball towards a target. It is one of the major forms of throwing sports. In pin bowling variations, the target is usually to knock over pins at the end of a lane. </p>
+										<a href="rules/bowling.doc" download>Read the rules!</a>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
+						
 					</div>
 						<div class="col-md-8">
-					<form id="contact-form" action="marathon.php" method="post">
-						<div class="row">
+					<form id="contact-form" action="bowling.php" method="post">
+ 						<div class="row">
 							<div class="col-md-6">
-								<input name="fname1" id="fname1" type="text" placeholder="Player 1 First Name">
-							</div>
-							<div class="col-md-6">
-								<input name="lname1" id="lname1" type="text" placeholder="Player 1 Last Name">
+								<input required name="fname1" id="fname1" type="text" placeholder="First Name">
 							</div>
 							<div class="col-md-6">
-								<input name="mail1" id="mail1" type="text" placeholder="Player 1 Email">
+								<input name="lname1" id="lname1" type="text" placeholder="Last Name">
+							</div>
+							<div class="col-md-6">
+								<input required name="mail1" id="mail1" type="email" placeholder="Email">
 							</div>
 							</div>
+							
 						<input type="submit" id="submit" value="Sign Up">
 						<div id="msg" class="message"></div>
 					</form>
