@@ -14,6 +14,7 @@
  10.single project page
  11.contact page
  12.footer
+ 13.sponsors / partners image configuration
  33.Responsive part
 -------------------------------------------------*/
 /*-------------------------------------------------------*/
@@ -976,10 +977,17 @@ margin-left: 35px;
   -moz-transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
-  width: 100%;
+ 
  
 }
-.clients-section ul.client-list li a img {
+.clients-section .sponsors ul.client-list li a img {
+  width:150px;
+  height: 50px;
+
+}
+.clients-section ul.client-list li a img{
+width:150px;
+height: 150px;
 
 }
 .clients-section ul.client-list li a:hover {
@@ -2461,6 +2469,7 @@ footer p.copyright {
   text-align: center;
   margin: 0;
 }
+
 /*-------------------------------------------------*/
 /* =  Responsive Part
 /*-------------------------------------------------*/
