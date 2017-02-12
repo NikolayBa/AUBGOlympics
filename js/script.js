@@ -6,6 +6,9 @@ var $ = jQuery.noConflict();
 $(document).ready(function($) {
 	"use strict";
 
+	//automatically updates the years of the copyright			
+	$(".copyright").append( "&copy;  Copyright " + new Date().getFullYear() + " AUBG OLYMPICS. All rights reserved.");
+
 	/* global google: false */
 	/*jshint -W018 */
 
