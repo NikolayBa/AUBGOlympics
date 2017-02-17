@@ -1,5 +1,5 @@
 <?php 
-    if(isset($_POST['fname1']) and isset($_POST['lname1']) and isset($_POST['mail1']) and isset($_POST['fname2']) and isset($_POST['lname2'])){
+    if(isset($_POST['fname1']) and isset($_POST['lname1']) and isset($_POST['mail1'])){
     $to1 = "aubgolympicscommittee@gmail.com"; // this is your Email address
     
     $from1 = $_POST['mail1']; // this is the sender's Email address
