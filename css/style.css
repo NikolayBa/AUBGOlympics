@@ -980,14 +980,11 @@ margin-left: 35px;
  
  
 }
-.clients-section .sponsors ul.client-list li a img {
-  width:150px;
-  height: 50px;
+.clients-section .sports_partners ul.client-list li a img {
+width:50%;
 
 }
 .clients-section ul.client-list li a img{
-width:150px;
-height: 150px;
 
 }
 .clients-section ul.client-list li a:hover {
