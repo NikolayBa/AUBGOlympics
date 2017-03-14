@@ -1,0 +1,12 @@
+{# My Things#}
+{{ asset_add('site.css', 'anomaly.theme.aubgolympics::css/style.css') }}
+{{ asset_add('bootstrap.css', 'anomaly.theme.aubgolympics::css/bootstrap.min.css') }}
+
+{{ html_style(asset_path('site.css')) }}
+{{ html_style(asset_path('bootstrap.css')) }}
+
+{{ asset_add('script.js', 'anomaly.theme.aubgolympics::js/parallax.js') }}
+
+{{ html_script(asset_path('script.js')) }}
+
+{#End of My Things#}
