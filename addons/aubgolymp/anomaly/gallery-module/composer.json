@@ -1,0 +1,9 @@
+{
+    "name": "anomaly/gallery-module",
+    "type": "streams-addon",
+    "autoload": {
+        "psr-4": {
+            "Anomaly\\GalleryModule\\": "src/"
+        }
+    }
+}

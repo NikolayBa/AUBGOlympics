@@ -9,16 +9,20 @@
     {% block metadata %}
         {% include "theme::partials/metadata" %}
     {% endblock %}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 </head>
 
 <body>
-<div id="content">
-    <div class="container">
+    <div class="container-fluid fixed">
+        <div class="container">
+            {% include "theme::partials/header" %}
+        </div>
 
         {% block content %}{% endblock %}
 
+        {% include "theme::partials/footer" %}
     </div>
-</div>
 
 
 </body>
