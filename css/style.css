@@ -2687,3 +2687,8 @@ footer p.copyright {
     height: 200px;
   }
 }
+
+.drop .languagebtn {
+  display: inline;
+  padding: 0px;
+}
