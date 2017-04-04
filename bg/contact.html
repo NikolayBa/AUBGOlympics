@@ -22,6 +22,10 @@
 	<link rel="stylesheet" type="text/css" href="../css/settings.css" media="screen"/>
 	<link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
 
+	<!-- Interactive map -->
+	
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+	<script src="http://maps.google.com/maps/api/js?key=AIzaSyBRi9fCSzyi2KF_ZIVmNd5Hwpa6Ztd5WTY" type="text/javascript"></script>	
 	
 	<script type="text/javascript" src="../js/jquery.min.js"></script>
 	<script type="text/javascript" src="../js/jquery.migrate.js"></script>
@@ -178,6 +182,41 @@
 	</div>
 	<!-- End Container -->
 
-	
+	<script>
+		// Interactive Map
+
+	 var locations = [
+      ['Soccer',42.029926, 23.115942, 4],
+      ['Dodgeball ',42.030018, 23.116198 , 5],
+      ['Tennis',42.030010, 23.116541 , 3],
+      ['BBQ',42.029841, 23.116826 , 2],
+      ['American University in Bulgaria', 42.012871, 23.095318, 1]
+    ];
+ 
+    var map = new google.maps.Map(document.getElementById('map2'), {
+      zoom: 14,
+      center: new google.maps.LatLng(42.014581, 23.096519),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+ 
+    var infowindow = new google.maps.InfoWindow();
+ 
+    var marker, i;
+ 
+    for (i = 0; i < locations.length; i++) {
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+ 
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+	</script>
+
 </body>
 </html>
