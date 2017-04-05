@@ -1,6 +1,8 @@
 <?php 
-    if(isset($_POST['fname1']) and isset($_POST['lname1']) and isset($_POST['mail1']) and isset($_POST['fname2']) and isset($_POST['lname2']) and isset($_POST['fname3']) and isset($_POST['lname3']) and isset($_POST['fname4']) and isset($_POST['lname4'])){
-    $to1 = "aubgolympicscommittee@gmail.com"; // this is your Email address
+    if(isset($_POST['fname1']) and isset($_POST['lname1']) and isset($_POST['mail1']) and isset($_POST['fname2']) and isset($_POST['lname2']) and isset($_POST['fname3']) and isset($_POST['lname3'])){
+    $to = "aubgolympicscommittee@gmail.com"; // this is your Email address
+    
+    $team_name = $_POST['team_name'];
     
     $from1 = $_POST['mail1']; // this is the sender's Email address
     $first_name1 = $_POST['fname1'];
@@ -8,27 +10,31 @@
     
     $first_name2 = $_POST['fname2'];
     $last_name2 = $_POST['lname2'];
+    $from2 = $_POST['mail2'];
     
     $first_name3 = $_POST['fname3'];
     $last_name3 = $_POST['lname3'];
+    $from3 = $_POST['mail3'];
 
+   	$subject = "Relay";
+  	$message = "Team: ".$team_name.PHP_EOL."Player 1: ". $first_name1 . " " . $last_name1 . " ". $from1. PHP_EOL."Player 2: " . $first_name2 . " " . $last_name2. " ". $from2.PHP_EOL."Player 3: " . $first_name3 . " " . $last_name3. " ". $from3.PHP_EOL;
 
-    $first_name4 = $_POST['fname4'];
-    $last_name4 = $_POST['lname4'];
-    
-			if($from1 == '' or $first_name1 == '' or $last_name1 == '' or $first_name2 == '' or $last_name2 == '' or $first_name3 == '' or $last_name3 == '' or $first_name4 == '' or $last_name4 == '') {
-  			 echo "Error";
-   				exit();
-   				} else {
-   				 $subject = "Relay 4x100 Meters";
-  				  $message = $first_name1 . " " . $last_name1 . "\n" . $first_name2 . " " . $last_name2. "\n" . $first_name3 . " " . $last_name3. "\n" . $first_name4 . " " . $last_name4;
-
-   					 	$headers = "From:" . $from1;
-  				  		$headers2 = "From:" . $to;
-  				  		mail($to1,$subject,$message,$headers);
-    					echo "Mail Sent. Thank you for registering!";
-    					// You can also use header('Location: thank_you.php'); to redirect to another page.
-    		}
+    $headers = "From:" . $from1;
+  	mail($to,$subject,$message,$headers);
+    try{
+    $file = fopen("/www/aubgolympics.com/signups/relay.txt", 'ab');
+    fwrite($file, "===========START===========".PHP_EOL);
+    fwrite($file, $message);
+    fwrite($file, "============END============".PHP_EOL);
+    fclose($file);
+    }
+    catch(Exception $e){
+      
+    }
+    echo "Thank you for registering! You will now be redirected";
+    echo "<script>";
+    echo "window.location.href='http://www.aubgolympics.com/sports.html.com';</script>";
+    die();
     } else {
     echo "Empty Fields";
     }

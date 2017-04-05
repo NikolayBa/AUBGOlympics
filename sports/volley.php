@@ -1,6 +1,6 @@
 <?php 
     if(isset($_POST['fname1']) and isset($_POST['lname1']) and isset($_POST['mail1']) and isset($_POST['fname2']) and isset($_POST['lname2']) and isset($_POST['fname3']) and isset($_POST['lname3']) and isset($_POST['fname4']) and isset($_POST['lname4']) and isset($_POST['fname5']) and isset($_POST['lname5']) and isset($_POST['fname6']) and isset($_POST['lname6'])){
-    $to = "aubgolympicscommittee@gmail.com"; // this is your Email address
+    //$to = "aubgolympicscommittee@gmail.com"; // this is your Email address
     
     $team_name = $_POST['team_name'];
     
@@ -31,8 +31,8 @@
    	$subject = "Volleyball";
   	$message = "Team: ".$team_name.PHP_EOL."Player 1: ". $first_name1 . " " . $last_name1 . " ". $from1. PHP_EOL."Player 2: " . $first_name2 . " " . $last_name2. " ". $from2.PHP_EOL."Player 3: " . $first_name3 . " " . $last_name3. " ". $from3.PHP_EOL."Player 4: " . $first_name4 . " " . $last_name4. " ". $from4. PHP_EOL."Player 5: " . $first_name5 . " " . $last_name5. " ". $from5.PHP_EOL ."Player 6: " . $first_name6 . " " . $last_name6. " ". $from6.PHP_EOL;
 
-    $headers = "From:" . $from1;
-  	mail($to,$subject,$message,$headers);
+   // $headers = "From:" . $from1;
+  //	mail($to,$subject,$message,$headers);
     try{
     $file = fopen("/www/aubgolympics.com/signups/volleyball.txt", 'ab');
     fwrite($file, "===========START===========".PHP_EOL);
@@ -45,7 +45,7 @@
     }
     echo "Thank you for registering! You will now be redirected";
     echo "<script>";
-    echo "window.location.href='http://www.aubgolympics.com';</script>";
+    echo "window.location.href='http://www.aubgolympics.com/sports.html.com';</script>";
     die();
     } else {
     echo "Empty Fields";
