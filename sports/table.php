@@ -1,9 +1,9 @@
 <?php
-if(isset($_POST['fname1']) && isset($_POST['lname1']) && isset($_POST['email1'])){
+if(isset($_POST['fname1']) && isset($_POST['lname1']) && isset($_POST['mail1'])){
 $to = "aubgolympicscommittee@gmail.com"; // this is your Email address
        
       
-      $from1 = $_POST['mail1']; // this is the sender's Email address
+    $from1 = $_POST['mail1']; // this is the sender's Email address
     $first_name1 = $_POST['fname1'];
     $last_name1 = $_POST['lname1'];
     
@@ -24,8 +24,10 @@ $to = "aubgolympicscommittee@gmail.com"; // this is your Email address
     }
     echo "Thank you for registering! You will now be redirected";
     echo "<script>";
-    echo "window.location.href='http://www.aubgolympics.com/sports.html.com';</script>";
-    die();
+    echo "window.setTimeout(function(){
+        // Move to a new location or you can do something else
+        window.location.href='http://www.aubgolympics.com/sports.html';
+    }, 2000);</script>";die();
     } else {
     echo "Empty Fields";
     }
