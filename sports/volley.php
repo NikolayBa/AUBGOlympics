@@ -45,7 +45,10 @@
     }
     echo "Thank you for registering! You will now be redirected";
     echo "<script>";
-    echo "window.location.href='http://www.aubgolympics.com/sports.html.com';</script>";
+    echo "window.setTimeout(function(){
+        // Move to a new location or you can do something else
+        window.location.href='http://www.aubgolympics.com/sports.html';
+    }, 2000);</script>";
     die();
     } else {
     echo "Empty Fields";

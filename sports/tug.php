@@ -15,12 +15,15 @@
     $first_name3 = $_POST['fname3'];
     $last_name3 = $_POST['lname3'];
     $from3 = $_POST['mail3'];
+
     $first_name4 = $_POST['fname4'];
     $last_name4 = $_POST['lname4'];
     $from4 = $_POST['mail4'];
+
     $first_name5 = $_POST['fname5'];
     $last_name5 = $_POST['lname5'];
     $from5 = $_POST['mail5'];
+    
    	$subject = "Tug of War";
   	$message = "Team: ".$team_name.PHP_EOL."Player 1: ". $first_name1 . " " . $last_name1 . " ". $from1. PHP_EOL."Player 2: " . $first_name2 . " " . $last_name2. " ". $from2.PHP_EOL."Player 3: " . $first_name3 . " " . $last_name3. " ". $from3.PHP_EOL."Player 4: " . $first_name4 . " " . $last_name4. " ". $from4. PHP_EOL."Player 5: " . $first_name5 . " " . $last_name5. " ". $from5.PHP_EOL;
     $headers = "From:" . $from1;
@@ -37,8 +40,10 @@
     }
     echo "Thank you for registering! You will now be redirected";
     echo "<script>";
-    echo "window.location.href='http://www.aubgolympics.com/sports.html.com';</script>";
-    die();
+    echo "window.setTimeout(function(){
+        // Move to a new location or you can do something else
+        window.location.href='http://www.aubgolympics.com/sports.html';
+    }, 2000);</script>";die();
     } else {
     echo "Empty Fields";
     }
