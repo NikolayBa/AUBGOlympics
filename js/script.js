@@ -5,7 +5,12 @@ var $ = jQuery.noConflict();
 
 $(document).ready(function($) {
 	"use strict";
-
+	$('ul.dropdown li').mouseover(function(){
+		$('.top-line').css({'overflow':''});
+	});
+	$('ul.dropdown li').mouseout(function(){
+		$('.top-line').css({'overflow':'hidden'});
+	});
 	//automatically updates the years of the copyright			
 	$(".copyright").append( "&copy;  Copyright " + new Date().getFullYear() + " AUBG OLYMPICS. All rights reserved.");
 
