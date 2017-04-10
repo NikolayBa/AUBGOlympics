@@ -5,6 +5,7 @@ var $ = jQuery.noConflict();
 
 $(document).ready(function($) {
 	"use strict";
+		$('.top-line').css({'overflow':'hidden'});
 	$('ul.dropdown li').mouseover(function(){
 		$('.top-line').css({'overflow':''});
 	});

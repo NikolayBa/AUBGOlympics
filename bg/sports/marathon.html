@@ -111,7 +111,16 @@ $("#header").load("header.html");
 							<div class="col-md-6">
 								<input name="mail1" id="mail1" type="email" required placeholder="Имейл">
 							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<h4 id="age">Възрастова група:</h4>
+								<label for="kid">Дете (до 14 години)</label>
+								<input name="age" id="kid" value="kid" type="radio" checked><br>
+								<label for="adult">Възрастен (над 14 години)</label>
+								<input name="age" id="adult" value="adult" type="radio">
 							</div>
+						</div>
 						<input type="submit" id="submit" value="Регистрирай се">
 						<div id="msg" class="message"></div>
 					</form>
