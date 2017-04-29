@@ -1,0 +1,44 @@
+{% block content %}
+    <form onsubmit="return showResults()">
+<div class="row">
+    <div class="col-md-4">
+        <select id="semester">
+            <option></option>
+            {% set semesters = entries('champions', 'semester').paginate() %}
+            {{ semesters.render() }}
+            {% for semester in semesters %}
+                <option>{{ semester.name }} </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="col-md-4">
+        <select id="events_select">
+            <option></option>
+            {% set events = entries('champions', 'event').paginate() %}
+            {{ events.render() }}
+            {% for event in events %}
+                <option>{{ event.name }} </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="col-md-4">
+        <select id="sports">
+            <option></option>
+            {% set sports = entries('champions', 'sport').paginate() %}
+            {{ sports.render() }}
+            {% for sport in sports %}
+                <option>{{ sport.name }} </option>
+            {% endfor %}
+        </select>
+    </div>
+</div><br>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4" style="text-align:center"><input type="submit" id="show_results" value = "Show results"></div>
+    <div class="col-md-4"></div>
+</div><br>
+    </form>
+    <div id="championsScores">
+
+    </div>
+{% endblock %}

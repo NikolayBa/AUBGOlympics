@@ -14,6 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Auth::routes();
 
+Route::get('/home', 'ChampionsController@index');
 Route::post('/submit/fillSemester', 'ChampionsController@fillSemester');
 Route::post('/createThumbnails','CreateThumbnails@createThumbnails');

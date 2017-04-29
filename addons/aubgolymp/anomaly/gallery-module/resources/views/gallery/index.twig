@@ -1,12 +1,17 @@
-{% extends "theme::layouts/default" %}
 {% block content %}
-
+    {#
+    Hello {{ auth_user().isAdmin() ? 'admin' : 'user' }}<br>
+    <a href="{{ url_route('anomaly.module.users::logout') }}">Logout</a>
+    {% if auth_user().hasRole('user') %}
+        User is an admin!
+    {% endif %}<br>
+    Hello {{ user().name() }}
+    #}
     {% set galleries = entries('gallery', 'galleries').paginate() %}
     {{ galleries.render()|raw }}
     <section class="team-section">
         <div class="container">
             {% for gallery in galleries %}
-
             <div class="col-md-4">
                 <div class="team-post">
                     <a href="{{ gallery.link }}">

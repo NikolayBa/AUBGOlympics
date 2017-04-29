@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
@@ -14,14 +15,10 @@
 </head>
 
 <body>
-    <div class="container-fluid fixed">
-        <div class="container">
-            {% include "theme::partials/header" %}
-        </div>
-
+    <div class="container-fluid">
+        {% include "theme::partials/header" %}
         {% block content %}{% endblock %}
 
-        {% include "theme::partials/footer" %}
     </div>
 
 

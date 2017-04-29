@@ -1,0 +1,9 @@
+{
+    "name": "anomaly/slider-module",
+    "type": "streams-addon",
+    "autoload": {
+        "psr-4": {
+            "Anomaly\\SliderModule\\": "src/"
+        }
+    }
+}

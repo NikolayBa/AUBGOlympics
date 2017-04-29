@@ -52,7 +52,9 @@ class MediumTableBuilder extends TableBuilder
      *
      * @var array
      */
-    protected $options = [];
+    protected $options = [
+        'sortable' => true
+    ];
 
     /**
      * The table assets.

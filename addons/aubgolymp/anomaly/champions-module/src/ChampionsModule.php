@@ -18,6 +18,25 @@ class ChampionsModule extends Module
      * @var array
      */
     protected $sections = [
-        'example'
+        'champions' => [
+            'buttons' => [
+                'new_champion'
+            ]
+        ],
+        'semester' => [
+            'buttons' => [
+                'new_semester'
+            ]
+        ],
+        'event' => [
+            'buttons' => [
+                'new_event'
+            ]
+        ],
+        'sport' => [
+            'buttons' => [
+                'new_sport'
+            ]
+        ]
     ];
 }

@@ -1,0 +1,15 @@
+{% block content %}
+    {% set crew = entries('crew', 'people').paginate() %}
+    {{ crew.render()|raw }}
+    <div class="project-box iso-call">
+        {% for member in crew %}
+        <div class="project-post">
+            {{ member.photo.make|raw }}
+            <div class="hover-box-reverse">
+                <h2>{{ member.name }}</h2>
+                <span>{{ member.position}}</span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

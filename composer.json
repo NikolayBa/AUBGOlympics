@@ -1,5 +1,6 @@
 {
     "require": {
-        "pyrocms/pyrocms": "^3.3"
+        "pyrocms/pyrocms": "^3.3",
+        "fzaninotto/faker": "^1.6"
     }
 }

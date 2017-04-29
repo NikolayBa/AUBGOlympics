@@ -28,6 +28,67 @@ $(document).ready(function() {
         placeholder: "Select a sport"
     });
 
+    jQuery('.tp-banner').show().revolution(
+        {
+            dottedOverlay:"none",
+            delay:10000,
+            startwidth:1140,
+            startheight:700,
+            hideThumbs:200,
+
+            thumbWidth:100,
+            thumbHeight:50,
+            thumbAmount:5,
+
+            navigationType:"bullet",
+            navigationArrows:"none",
+
+            touchenabled:"on",
+            onHoverStop:"off",
+
+            swipe_velocity: 0.7,
+            swipe_min_touches: 1,
+            swipe_max_touches: 1,
+            drag_block_vertical: false,
+
+            parallax:"mouse",
+            parallaxBgFreeze:"on",
+            parallaxLevels:[7,4,3,2,5,4,3,2,1,0],
+
+            keyboardNavigation:"off",
+
+            navigationHAlign:"center",
+            navigationVAlign:"bottom",
+            navigationHOffset:0,
+            navigationVOffset:40,
+
+            shadow:0,
+
+            spinner:"spinner4",
+
+            stopLoop:"off",
+            stopAfterLoops:-1,
+            stopAtSlide:-1,
+
+            shuffle:"off",
+
+            autoHeight:"off",
+            forceFullWidth:"off",
+
+
+
+            hideThumbsOnMobile:"off",
+            hideNavDelayOnMobile:1500,
+            hideBulletsOnMobile:"off",
+            hideArrowsOnMobile:"off",
+            hideThumbsUnderResolution:0,
+
+            hideSliderAtLimit:0,
+            hideCaptionAtLimit:0,
+            hideAllCaptionAtLilmit:0,
+            startWithSlide:0,
+            fullScreenOffsetContainer: ".header"
+        });
     /*$.ajax({
      type: "POST",
      url: './submit/fillSemester',
@@ -44,13 +105,13 @@ $(document).ready(function() {
      });*/
 
     $("#semester").change(function() {
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]')
-                    .attr('content')
-            }
-        });
-        /*var semester = $('#semester').valueOf();
+        // $.ajaxSetup({
+        //     headers: {
+        //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]')
+        //             .attr('content')
+        //     }
+        // });
+        /*var semester = $('#semester').val();
         window.alert(semester);*/
         $.ajax({
          type: "POST",
@@ -73,25 +134,86 @@ $(document).ready(function() {
 
     });
 
+    $('#register').on('click', function(){
         $.ajaxSetup({
             headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]')
-                    .attr('content')
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
         $.ajax({
-         type: "POST",
-         url: './submit/fillSemester',
-         cache: false,
-         success: function(response){
-         },
-         error: function (error) {
-         }
-         });
+            type: "POST",
+            url: './register',
+            cache: false,
+            success: function(){
+                location.href = "http://www.dev.aubgolympics.com/register"
+            },
+            error: function (error) {
+            }
+        });
         return false;
+    });
+
+    $('#logmein').on('click', function(){
+        // $.ajaxSetup({
+        //     headers: {
+        //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        //     }
+        // });
+        // $.ajax({
+        //     type: "POST",
+        //     url: './login',
+        //     cache: false,
+        //     success: function(){
+        //         location.href = "http://www.dev.aubgolympics.com/login"
+        //     },
+        //     error: function (error) {
+        //     }
+        // });
+        // return false;
+        login();
+    });
+
 
 });
 
+
+function showResults(){
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]')
+                .attr('content')
+        }
+    });
+    var formData = $('form')[0];
+    var dataObj = new FormData(formData);
+    window.alert(dataObj);
+    // var specifications = [];
+    // specifications['semester'] = $('#semester').val();
+    // specifications['event'] = $('#events_select').val();
+    // specifications['sport'] = $('#sports').val();
+    $.ajax({
+        type: "POST",
+        url: './champions/show_results',
+        data: dataObj,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function(response){{
+            $('#championsScores').append(response);
+            // $('#championsScores').append(response[0]['name']);
+        }
+        },
+        error: function (error) {
+            $('#result').append("We have encountered an" +
+                " error while submitting your article!")
+        }
+    });
+    return false;
+
+}
+/*
+$("#show_results").on('click',function() {
+});*/
 function remove(){
     $('#parallax').css('background-image', function(){
         var pic = $(this).find('img:first').attr('src');
