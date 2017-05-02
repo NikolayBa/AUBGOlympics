@@ -6,7 +6,7 @@ class ChampionsModuleServiceProvider extends AddonServiceProvider
 {
 
     protected $routes = [
-        'champions/show_results' => 'Anomaly\ChampionsModule\Http\Controller\Admin\ChampionController@show_results',
+        'champions/show_results' => 'Anomaly\ChampionsModule\Http\Controller\ChampionsController@show_results',
         'admin/champions' => 'Anomaly\ChampionsModule\Http\Controller\Admin\ChampionController@index',
         'admin/champions/create' => 'Anomaly\ChampionsModule\Http\Controller\Admin\ChampionController@create',
         'admin/champions/edit/{id}' => 'Anomaly\ChampionsModule\Http\Controller\Admin\ChampionController@edit',

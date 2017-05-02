@@ -7,6 +7,7 @@ class GalleryModuleServiceProvider extends AddonServiceProvider
 
     protected $routes = [
         'gallery' => 'Anomaly\GalleryModule\Http\Controller\GalleryController@index',
+        'gallery/test' => 'Anomaly\GalleryModule\Http\Controller\GalleryController@home',
         'admin/gallery' => 'Anomaly\GalleryModule\Http\Controller\Admin\GalleriesController@index',
         'admin/gallery/create' => 'Anomaly\GalleryModule\Http\Controller\Admin\GalleriesController@create',
         'admin/gallery/edit/{id}' => 'Anomaly\GalleryModule\Http\Controller\Admin\GalleriesController@edit',

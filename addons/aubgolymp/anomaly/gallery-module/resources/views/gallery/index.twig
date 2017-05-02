@@ -1,4 +1,3 @@
-{% block content %}
     {#
     Hello {{ auth_user().isAdmin() ? 'admin' : 'user' }}<br>
     <a href="{{ url_route('anomaly.module.users::logout') }}">Logout</a>
@@ -7,7 +6,7 @@
     {% endif %}<br>
     Hello {{ user().name() }}
     #}
-    {% set galleries = entries('gallery', 'galleries').paginate() %}
+    {% set galleries = entries('gallery', 'galleries').get() %}
     {{ galleries.render()|raw }}
     <section class="team-section">
         <div class="container">
@@ -128,5 +127,3 @@
             </div>#}
         </div>
     </section>
-
-{% endblock %}

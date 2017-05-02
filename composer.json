@@ -1,6 +1,7 @@
 {
     "require": {
         "pyrocms/pyrocms": "^3.3",
-        "fzaninotto/faker": "^1.6"
+        "fzaninotto/faker": "^1.6",
+        "facebook/graph-sdk": "^5.5"
     }
 }

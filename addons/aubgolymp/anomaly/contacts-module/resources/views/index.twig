@@ -1,0 +1,43 @@
+{% set heads = entries('contacts', 'person').get() %}
+    {{ heads.render()|raw }}
+<section class="contact-section">
+    <div class="container">
+        <div class="col-md-4">
+            <div class="contact-info">
+                <h2>Contact Info</h2>
+                <p>You can contact us in any of the numbers below!</p>
+                <ul class="information-list">
+                    <li><i class="fa fa-map-marker"></i><span>12 Svoboda Bachvarova St. City. Blagoevgrad 2700, Bulgaria</span></li>
+                    <li><i class="fa fa-phone"></i>
+                        {% for head in heads %}
+                        <span>{{ head.position }} - {{ head.name }}: {{ head.phone }}</span>
+                        {% endfor %}
+                    </li>
+                    <li><i class="fa fa-envelope-o"></i><span>aubgolympics@gmail.com</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <form id="contact-form" action="contact.php" method="post">
+                <h2>Send us a message</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <input name="name" id="name" type="text" placeholder="Name">
+                    </div>
+                    <div class="col-md-6">
+                        <input name="mail" id="mail" type="text" placeholder="Email">
+                    </div>
+                    <div class="col-md-6">
+                        <input name="subject" id="subject" type="text" placeholder="Subject">
+                    </div>
+                    <div class="col-md-6">
+                        <input name="telephone" id="telephone" type="text" placeholder="Telephone">
+                    </div>
+                </div>
+                <textarea name="comment" id="comment" placeholder="Message"></textarea>
+                <input type="submit" id="submit_contact" value="Send Message">
+                <div id="msg" class="message"></div>
+            </form>
+        </div>
+    </div>
+</section>

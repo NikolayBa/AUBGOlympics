@@ -5,17 +5,20 @@ body, html{
 
 #login {
     position: absolute;
-    z-index: 1;
+    z-index: 100;
     right: 3%;
     top: 10%;
 }
-
+#register{
+    margin-right:10px;
+}
 .authentication{
     background: transparent;
+    color: #f39c12 !important;
     border: none;
     font-size: 14pt;
+    text-decoration:none !important;
 }
-
 #sign-up-button{
     margin-left: 10%;
     background:transparent;
@@ -68,10 +71,10 @@ body, html{
 }
 
 #orange{
-    color:orange;
-    clear:both;
-    font-weight: bold;
-    font-size:45pt;
+    color: #f39c12;
+    background-color: #f39c12;
+    margin: 0;
+    height:48.5667px;
 }
 #parallax, #charity_img, #something{
     /* Full height */
@@ -83,6 +86,7 @@ body, html{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-color:rgba(0,0,0,0.5);
 
     overflow: hidden;
 
@@ -92,24 +96,27 @@ body, html{
 
 .text{
     overflow: auto;
-    background-color:#f39c12;
-    font-size:36px;
+    background-color:#3A539B;
     clear:both;
 }
 
 p {
-    margin-top: 5px;
-    margin-bottom: 0;
-}
+     font-size: 14px;
+     color: #666666;
+     font-family: 'Lato', sans-serif;
+     font-weight: 400;
+     line-height: 20px;
+     margin-top: 5px;
+     margin-bottom: 0;
+ }
 
 p#controls {
      text-align:center;
- }
+}
 #controls span {
     padding-right:2em;
     cursor:pointer;
 }
-
 select{
     width:100%;
 }
@@ -286,6 +293,7 @@ select{
 
 footer {
     font-size:14pt !important;
+    background-color: #f39c12;
 }
 footer ul.social-icons {
     margin: 0;
@@ -309,8 +317,8 @@ footer ul.social-icons li a {
 footer ul.social-icons li a:hover {
     color: #f39c12;
 }
-footer p.copyright {
-    padding: 25px 0;
+footer .copyright {
+    padding: 15px 0;
     background: #f39c12;
     text-transform: uppercase;
     font-size: 13px;
@@ -376,7 +384,7 @@ footer p.copyright {
 }
 .navbar-brand {
     display: inline-block;
-    height: auto;
+    height: auto !important;
     transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -webkit-transition: all 0.2s ease-in-out;
@@ -387,7 +395,7 @@ footer p.copyright {
     margin: 0;
     color: #f39c12 !important;
     text-transform: capitalize;
-    padding: 1px 12px;
+    padding: 1px 12px !important;
     letter-spacing: 2.5px;
 }
 .navbar-brand span {
@@ -570,11 +578,10 @@ header.active .navbar-nav > li > a.active {
 }
 .project-box .project-post .hover-box-reverse h2 {
     color: #222;
-    font-size: 17px;
+    font-size: 15px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     margin: 0 0 15px;
-    font-size: 15px;
     margin: 0;
     font-weight: 400;
 }
@@ -591,14 +598,13 @@ header.active .navbar-nav > li > a.active {
     color: #222;
 }
 .project-box .project-post .hover-box-reverse span{
-    font-size: 14px;
+    font-size: 12px;
     color: #fff;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     line-height: 20px;
     margin: 0 0 10px;
     margin-bottom: 0;
-    font-size: 12px;
 }
 .project-box .project-post:hover .hover-box-reverse {
     bottom: -100%;
@@ -922,10 +928,11 @@ header.active .navbar-nav > li > a.active {
 .dropdown {
     list-style: none;
     font-weight: bold;
-    margin: 0;
+    margin: 0 !important;
     float: right; /* Clear floats */
     text-align: right;
     position: relative;
+    background-color: #f39c12;
 }
 .dropdown li {
     float: left;
@@ -935,11 +942,11 @@ header.active .navbar-nav > li > a.active {
 .dropdown a {
     display: block;
     padding: 5px;
-    color: #fff;
+    color: #f39c12;
     text-decoration: none;
 }
 .dropdown a:hover {
-    color: #fff;
+    color: #f39c12;
     text-decoration: underline;
 }
 
@@ -1032,4 +1039,258 @@ header.active .navbar-nav > li > a.active {
 
 #home-section .tp-bannertimer {
     display: none !important;
+}
+
+.contact-section {
+    padding: 60px 0 30px;
+}
+.contact-section h1 {
+    color: #f39c12;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin: 0 0 15px;
+    font-size: 35px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+.contact-section h2 {
+    color: #f39c12;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin: 0 0 15px;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+.contact-section p {
+    margin-bottom: 30px;
+    color: #222;
+}
+.contact-section ul.information-list {
+    margin: 0;
+    padding: 0;
+}
+.contact-section ul.information-list li {
+    list-style: none;
+    overflow: hidden;
+    border-bottom: 1px solid #f39c12;
+    margin-bottom: 10px;
+}
+.contact-section ul.information-list li i {
+    float: left;
+    color: #f39c12;
+    font-size: 13px;
+    display: inline-block;
+    line-height: 24px;
+}
+.contact-section ul.information-list li span {
+    display: block;
+    font-size: 14px;
+    color: #666666;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0 0 10px;
+    margin-bottom: 8px;
+    margin-left: 25px;
+    color: #222;
+}
+.contact-section ul.information-list li a {
+    font-size: 14px;
+    color: #666666;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0 0 10px;
+    display: inline-block;
+    margin-left: 25px;
+    margin-bottom: 10px;
+    color: #f39c12;
+}
+.contact-section ul.information-list li:last-child {
+    border-bottom: none;
+}
+#contact-form input[type="text"],
+.comment-form input[type="text"],
+#contact-form input[type="email"],
+.comment-form input[type="email"],
+#contact-form textarea,
+.comment-form textarea,
+#application-form textarea,
+.application-form textarea,
+.application-form-section textarea
+{
+    width: 100%;
+    padding: 10px 20px;
+    border: 1px solid #dedede;
+    margin-bottom: 20px;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    color: #666666;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+}
+#contact-form input[type="text"]:focus,
+.comment-form input[type="text"]:focus,
+#contact-form textarea:focus,
+.comment-form textarea:focus,
+#application-form-section textarea:focus,
+.application-form-section textarea:focus
+{
+    border: 1px solid #f39c12;
+}
+#contact-form textarea,
+.comment-form textarea {
+    height: 146px;
+}
+#contact-form input[type="submit"],
+.comment-form input[type="submit"],
+#application-form input[type="submit"]
+{
+    padding: 12px 30px;
+    outline: none;
+    border: none;
+    background: #f39c12;
+    color: #ffffff;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    margin-bottom: 10px;
+}
+#contact-form input[type="submit"]:hover,
+.comment-form input[type="submit"]:hover {
+    opacity: 0.7;
+}
+#contact-form .message,
+.comment-form .message,
+#quote-msg {
+    padding: 10px 20px;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+}
+#contact-form .message.error,
+.comment-form .message.error,
+#quote-msg.error {
+    color: #e74c3c;
+    background: rgba(246, 80, 80, 0.4);
+    border: 1px solid #e74c3c;
+}
+#contact-form .message.success,
+.comment-form .message.success,
+#quote-msg.success {
+    color: #29b504;
+    background: rgba(63, 220, 21, 0.4);
+    border: 1px solid #29b504;
+}
+
+.video{
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+.second-tab{
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+.blog-section {
+    padding: 55px 0 25px;
+    background: #3A539B
+}
+.blog-section h2 {
+    color: #f39c12;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin: 0 0 15px;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+.blog-section .blog-box .blog-post {
+    margin-bottom: 40px;
+    color: #ffffff
+}
+.blog-section .blog-box .blog-post img,
+.blog-section .blog-box .blog-post iframe {
+    width: 45%;
+    margin-bottom: 30px;
+
+}
+.blog-section .blog-box .blog-post iframe {
+    height: 360px;
+}
+.blog-section .blog-box .blog-post h2 {
+    color: #f39c12;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin: 0 0 15px;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+.blog-section .blog-post h5 {
+    color: #f39c12;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin: 0 0 15px;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 0px;
+}
+.blog-section .blog-box .blog-post h2 a {
+    display: inline-block;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    color: #f39c12;
+}
+.blog-section .blog-box .blog-post h2 a:hover {
+    color: #f39c12;
+}
+
+.blog-section .blog-box .blog-post span {
+    display: inline-block;
+    color: #666666;
+    font-size: 11px;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    margin: 0 0 25px;
+}
+.blog-section .blog-box .blog-post .post-content-text > a {
+    display: inline-block;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    color: #666666;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+.blog-section .blog-box .blog-post .post-content-text > a:hover {
+    color: #f39c12;
+}
+.page-banner-section {
+    margin-top: 52px;
+    padding: 60px 0;
+    position: relative;
+    background: center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 }

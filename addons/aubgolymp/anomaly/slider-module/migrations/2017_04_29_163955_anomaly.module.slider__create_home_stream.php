@@ -19,6 +19,52 @@ class AnomalyModuleSliderCreateHomeStream extends Migration
      *
      * @var array
      */
-    protected $assignments = [];
+    protected $assignments = [
+        'firstBackground' => [
+            'required' => true
+        ],
+        'secondBackground' => [
+            'required' => true
+        ],
+        'thirdBackground' => [
+            'required' => true
+        ],
+        'event' => [
+            'required' => true
+        ],
+        'eventSport' => [
+            'required' => true
+        ],
+        'date' => [
+            'required' => true
+        ],
+        'signLink' => [
+            'required' => true
+        ],
+        'signText' => [
+            'required' => true
+        ],
+        'secondSlideTextOne' => [
+            'required' => true
+        ],
+        'secondSlideTextTwo' => [
+            'required' => true
+        ],
+        'secondSlideTextThree' => [
+            'required' => true
+        ],
+        'secondSlideButton' => [
+            'required' => true
+        ],
+        'thirdSlideTextOne' => [
+            'required' => true
+        ],
+        'thirdSlideTextTwo' => [
+            'required' => true
+        ],
+        'thirdSlideButton' => [
+            'required' => true
+        ],
+    ];
 
 }

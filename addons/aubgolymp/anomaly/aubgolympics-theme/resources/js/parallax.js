@@ -1,5 +1,5 @@
 $(document).ready(function() {
- remove();
+        remove();
 
  $("#controls").on('click', 'span', function() {
      $("#slideshow .parallax img").removeClass("opaque");
@@ -15,7 +15,6 @@ $(document).ready(function() {
         pause: true,
         interval: false,
     });
-
 
     $('select').select2();
     $('#semester').select2({
@@ -75,8 +74,6 @@ $(document).ready(function() {
             autoHeight:"off",
             forceFullWidth:"off",
 
-
-
             hideThumbsOnMobile:"off",
             hideNavDelayOnMobile:1500,
             hideBulletsOnMobile:"off",
@@ -89,6 +86,13 @@ $(document).ready(function() {
             startWithSlide:0,
             fullScreenOffsetContainer: ".header"
         });
+
+    var picOne = $('#firstImage').find('img:first').attr('src');
+    $('#firstBG').attr('src',picOne);
+    var picTwo = $('#secondImage').find('img:first').attr('src');
+    $('#secBG').attr('src',picTwo);
+    var picThree = $('#thirdImage').find('img:first').attr('src');
+    $('#thirdBG').attr('src',picThree);
     /*$.ajax({
      type: "POST",
      url: './submit/fillSemester',
@@ -103,36 +107,36 @@ $(document).ready(function() {
      " error while submitting your article!")
      }
      });*/
-
-    $("#semester").change(function() {
-        // $.ajaxSetup({
-        //     headers: {
-        //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]')
-        //             .attr('content')
-        //     }
-        // });
-        /*var semester = $('#semester').val();
-        window.alert(semester);*/
-        $.ajax({
-         type: "POST",
-         url: './submit/fillSemester',
-         cache: false,
-         contentType: false,
-         processData: false,
-         success: function(response){
-         if(response == "Success!"){
-         $('#result').append("You have successfully" +
-         " submitted your article!");
-         }
-         },
-         error: function (error) {
-         $('#result').append("We have encountered an" +
-         " error while submitting your article!")
-         }
-         });
-        return false;
-
-    });
+    //
+    // $("#semester").change(function() {
+    //     // $.ajaxSetup({
+    //     //     headers: {
+    //     //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]')
+    //     //             .attr('content')
+    //     //     }
+    //     // });
+    //     /*var semester = $('#semester').val();
+    //     window.alert(semester);*/
+    //     $.ajax({
+    //      type: "POST",
+    //      url: './submit/fillSemester',
+    //      cache: false,
+    //      contentType: false,
+    //      processData: false,
+    //      success: function(response){
+    //      if(response == "Success!"){
+    //      $('#result').append("You have successfully" +
+    //      " submitted your article!");
+    //      }
+    //      },
+    //      error: function (error) {
+    //      $('#result').append("We have encountered an" +
+    //      " error while submitting your article!")
+    //      }
+    //      });
+    //     return false;
+    //
+    // });
 
     $('#register').on('click', function(){
         $.ajaxSetup({
@@ -154,28 +158,26 @@ $(document).ready(function() {
     });
 
     $('#logmein').on('click', function(){
-        // $.ajaxSetup({
-        //     headers: {
-        //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        //     }
-        // });
-        // $.ajax({
-        //     type: "POST",
-        //     url: './login',
-        //     cache: false,
-        //     success: function(){
-        //         location.href = "http://www.dev.aubgolympics.com/login"
-        //     },
-        //     error: function (error) {
-        //     }
-        // });
-        // return false;
-        login();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            type: "POST",
+            url: './login',
+            cache: false,
+            success: function(){
+                location.href = "http://www.dev.aubgolympics.com/login"
+            },
+            error: function (error) {
+            }
+        });
+        return false;
     });
 
 
 });
-
 
 function showResults(){
     $.ajaxSetup({
@@ -186,11 +188,11 @@ function showResults(){
     });
     var formData = $('form')[0];
     var dataObj = new FormData(formData);
-    window.alert(dataObj);
     // var specifications = [];
     // specifications['semester'] = $('#semester').val();
     // specifications['event'] = $('#events_select').val();
     // specifications['sport'] = $('#sports').val();
+    // console.log(specifications);
     $.ajax({
         type: "POST",
         url: './champions/show_results',
@@ -199,8 +201,9 @@ function showResults(){
         contentType: false,
         processData: false,
         success: function(response){{
-            $('#championsScores').append(response);
-            // $('#championsScores').append(response[0]['name']);
+            $('#firstPlace').empty().append('<div class="col-md-6"><h5>'+response[0]['name']+'</h5></div>');
+            $('#secondPlace').empty().append('<h5>'+response[1]['name']+'</h5>');
+            $('#thirdPlace').empty().append('<h5>'+response[2]['name']+'</h5>');
         }
         },
         error: function (error) {
@@ -211,9 +214,6 @@ function showResults(){
     return false;
 
 }
-/*
-$("#show_results").on('click',function() {
-});*/
 function remove(){
     $('#parallax').css('background-image', function(){
         var pic = $(this).find('img:first').attr('src');
@@ -229,5 +229,10 @@ function remove(){
         var pic2 = $(this).find('img:first').attr('src');
         $('#charity_img img:first').css({'visibility':'hidden','width':'100%','height':'100%'});
         return 'url(' + pic2 + ')';
+    })
+    $('.banner').css('background-image', function(){
+        var pic3 = $(this).find('img:first').attr('src');
+        $('.banner img:first').css({'visibility':'hidden','height':'0'});
+        return 'url(' + pic3 + ')';
     })
 }

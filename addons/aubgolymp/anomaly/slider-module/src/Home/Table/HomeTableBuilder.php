@@ -24,7 +24,11 @@ class HomeTableBuilder extends TableBuilder
      *
      * @var array|string
      */
-    protected $columns = [];
+    protected $columns = [
+        'entry.firstBackground.preview(250,250)',
+        'entry.secondBackground.preview(250,250)',
+        'entry.thirdBackground.preview(250,250)'
+    ];
 
     /**
      * The table buttons.

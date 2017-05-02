@@ -1,0 +1,6 @@
+{% if auth_user()%}
+    <a class="authentication" href="{{ url_route('anomaly.module.users::logout') }}">Logout</a>
+{% else %}
+    <a class="authentication" id="register" href="{{ url_route('anomaly.module.users::register') }}">Register</a>
+    <a class="authentication" href="{{ url_route('anomaly.module.users::login') }}">Login</a>
+{% endif %}

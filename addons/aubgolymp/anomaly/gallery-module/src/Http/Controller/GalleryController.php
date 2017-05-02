@@ -16,4 +16,8 @@ class GalleryController extends PublicController
     public function index(){
        return $this->view->make('anomaly.module.gallery::gallery/index');
     }
+
+    public function home(){
+        return view('profile');
+    }
 }

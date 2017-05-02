@@ -33,12 +33,8 @@ class AnomalyModuleCrewCreatePeopleStream extends Migration
             'required' => true,
             'translatable' => true
         ],
-        'over' => [
-            'required' => true
-        ],
-        'out' => [
-            'required' => true
-        ]
+        'over',
+        'out'
     ];
 
 }

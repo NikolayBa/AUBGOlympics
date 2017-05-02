@@ -18,6 +18,10 @@ class SliderModule extends Module
      * @var array
      */
     protected $sections = [
-        'example'
+        'slider' => [
+            'buttons' => [
+                'new_slider'
+            ]
+        ]
     ];
 }

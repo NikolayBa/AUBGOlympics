@@ -3,8 +3,6 @@
 use Anomaly\ChampionsModule\Champion\Form\ChampionFormBuilder;
 use Anomaly\ChampionsModule\Champion\Table\ChampionTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class ChampionController extends AdminController
 {
@@ -43,14 +41,4 @@ class ChampionController extends AdminController
         return $form->render($id);
     }
 
-    public function show_results(Request $request){
-//        $winners = DB::table('aubgolymp_champions_champion')->where('');
-        $winners = DB::table('champions_champion')->select('champions_champion.name')
-            ->join('champions_sport', function ($join) use ($request) {
-                $join->on('champions_champion.sport_id', '=', 'champions_sport.id')
-                    ->where('champions_sport.name', '=', $request->input()['semester']);
-            })
-            ->get();
-        return $winners;
-    }
 }

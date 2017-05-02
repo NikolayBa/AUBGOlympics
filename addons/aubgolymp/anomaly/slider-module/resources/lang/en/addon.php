@@ -3,5 +3,8 @@
 return [
     'title'       => 'Slider',
     'name'        => 'Slider Module',
-    'description' => ''
+    'description' => '',
+    'section' => [
+        'slider' => 'Slider'
+    ]
 ];

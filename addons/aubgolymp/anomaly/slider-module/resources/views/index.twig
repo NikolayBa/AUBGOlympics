@@ -1,0 +1,83 @@
+    {% set slider = entries('slider', 'home').paginate() %}
+    {{ slider.render()|raw }}
+    {% for slider in slider %}
+<section id="home-section" class="slider1">
+    <div class="tp-banner-container">
+        <div class="tp-banner">
+            <ul>
+                <li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-saveperformance="on" data-title="Intro Slide">
+                    {#<div id="firstImage" style="visibility: hidden">{{ slider.firstBackground.make|raw }}</div>#}
+                    <!-- MAIN IMAGE -->
+                    <img id="firstBG" src="http://www.dev.aubgolympics.com/app/aubgolymp/assets/images/dbef5f4d7bbd057dd8176f9767da0489.jpg?v=1493548919" alt="slidebg1" data-lazyload="http://www.dev.aubgolympics.com/app/aubgolymp/assets/images/dbef5f4d7bbd057dd8176f9767da0489.jpg?v=1493548919" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+
+                    <div class="tp-caption finewide_medium_white lfl tp-resizeme rs-parallaxlevel-0" data-x="0" data-y="280" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="500" data-start="1200" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" style="z-index: 8; white-space: nowrap;">{{ slider.event|raw }} <br><span>{{ slider.eventSport|raw }}</span>
+                    </div>
+
+                    <div class="tp-caption small_text customin tp-resizeme rs-parallaxlevel-0" data-x="0" data-y="400" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="500" data-start="1800" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.05" data-endelementdelay="0.1" style="z-index: 7; white-space: nowrap;">
+
+                        <div class="clock-builder-output"></div>
+                        <style text="text/css">body .flip-clock-wrapper ul li a div div.inn, body .flip-clock-small-wrapper ul li a div div.inn { color: #fff; background-color: #f39c12; } body .flip-clock-dot, body .flip-clock-small-wrapper .flip-clock-dot { background: #2c3e50; } body .flip-clock-wrapper .flip-clock-meridium a, body .flip-clock-small-wrapper .flip-clock-meridium a { color: #2c3e50; }</style>
+                        <script type="text/javascript">$(function(){
+                                FlipClock.Lang.Custom = { days:'Days', hours:'Hours', minutes:'Minutes', seconds:'Seconds' };
+                                var opts = {
+                                    clockFace: 'DailyCounter',
+                                    countdown: true,
+                                    language: 'Custom'
+                                };
+                                var countdown = (new Date('{{ slider.date|raw }}').getTime()/1000) - (new Date().getTime()/1000);// from: 04/24/2016 09:00 am +0200
+                                countdown = Math.max(1, countdown);
+                                $('.clock-builder-output').FlipClock(countdown, opts);
+                            });
+                        </script>
+                    </div>
+
+                    <div class="tp-caption lfl tp-resizeme rs-parallaxlevel-0" data-x="0" data-y="550" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="500" data-start="2400" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-linktoslide="next" style="z-index: 10; white-space: nowrap;">
+                    </div>
+
+                    <div class="tp-caption lfb tp-resizeme rs-parallaxlevel-0" data-x="650" data-y="450" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="500" data-start="2400" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-linktoslide="next" style="z-index: 12; white-space: nowrap;"><a href="{{ slider.signLink|raw }}" class="trans-btn">{{ slider.signText|raw }}</a>
+                    </div>
+
+
+
+                </li><li data-transition="fade" data-slotamount="7" data-masterspeed="2000" data-saveperformance="on" data-title="Ken Burns Slide">
+                    <div id="secondImage">{{ slider.secondBackground.make|raw }}</div>
+                    <!-- MAIN IMAGE -->
+                    <img id="secBG" src="" alt="2" data-lazyload="upload/slide/2.jpg" data-bgposition="right top" data-duration="12000" data-ease="Power0.easeInOut" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center bottom">
+
+
+                    <div class="tp-caption small_text customin tp-resizeme rs-parallaxlevel-0" data-x="470" data-y="310" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="500" data-start="1200" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.05" data-endelementdelay="0.1" style="z-index: 9; white-space: nowrap;">{{ slider.secondSlideTextOne|raw }}
+                    </div>
+
+                    <div class="tp-caption finewide_medium_white lfl tp-resizeme rs-parallaxlevel-0" data-x="160" data-y="358" data-speed="500" data-start="1800" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.05" data-endelementdelay="0.05" style="z-index: 7; white-space: nowrap;">{{ slider.secondSlideTextTwo|raw }}
+                    </div>
+
+                    <div class="tp-caption finewide_medium_white lfr tp-resizeme rs-parallaxlevel-0" data-x="185" data-y="412" data-speed="500" data-start="1800" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" style="z-index: 7; white-space: nowrap;"><span>{{ slider.secondSlideTextThree|raw }}</span>
+                    </div>
+
+                    <div class="tp-caption lfb tp-resizeme rs-parallaxlevel-0" data-x="470" data-y="505" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="500" data-start="2400" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-linktoslide="next" style="z-index: 12; white-space: nowrap;"><a href="#first" class="trans-btn">{{ slider.secondSlideButton|raw }}</a>
+                    </div>
+                </li>
+
+                <li data-transition="fade" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on" data-title="Parallax 3D">
+                    <div id="thirdImage">{{ slider.thirdBackground.make|raw }}</div>
+                    <!-- MAIN IMAGE -->
+                    <img id="thirdBG" src="" alt="3dbg" data-lazyload="upload/slide/3.jpg" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+
+
+                    <div class="tp-caption finewide_medium_white lfl tp-resizeme rs-parallaxlevel-0" data-x="0" data-y="280" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="500" data-start="1200" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" style="z-index: 8; white-space: nowrap;">{{ slider.thirdSlideTextOne|raw }}<br>
+                    </div>
+
+                    <div class="tp-caption small_text customin tp-resizeme rs-parallaxlevel-0 backgroun-col" data-x="0" data-y="350" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="500" data-start="1800" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.05" data-endelementdelay="0.1" style="z-index: 7; white-space: nowrap; color: #222;">{{ slider.thirdSlideTextTwo|raw }}
+                    </div>
+
+                    <div class="tp-caption lfl tp-resizeme rs-parallaxlevel-0" data-x="0" data-y="490" data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-speed="500" data-start="2400" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-linktoslide="next" style="z-index: 10; white-space: nowrap;"><a href="products.html" class="trans-btn">{{ slider.thirdSlideButton|raw }}</a>
+                    </div>
+
+
+                </li>
+            </ul>
+            <div class="tp-bannertimer"></div>
+        </div>
+    </div>
+</section>
+    {% endfor %}

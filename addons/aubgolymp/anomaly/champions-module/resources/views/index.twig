@@ -1,10 +1,9 @@
-{% block content %}
-    <form onsubmit="return showResults()">
+<form onsubmit="return showResults()">
 <div class="row">
     <div class="col-md-4">
-        <select id="semester">
+        <select id="semester" name="semester">
             <option></option>
-            {% set semesters = entries('champions', 'semester').paginate() %}
+            {% set semesters = entries('champions', 'semester').get() %}
             {{ semesters.render() }}
             {% for semester in semesters %}
                 <option>{{ semester.name }} </option>
@@ -12,9 +11,9 @@
         </select>
     </div>
     <div class="col-md-4">
-        <select id="events_select">
+        <select id="events_select" name="events_select">
             <option></option>
-            {% set events = entries('champions', 'event').paginate() %}
+            {% set events = entries('champions', 'event').get() %}
             {{ events.render() }}
             {% for event in events %}
                 <option>{{ event.name }} </option>
@@ -22,9 +21,9 @@
         </select>
     </div>
     <div class="col-md-4">
-        <select id="sports">
+        <select id="sports" name="sports">
             <option></option>
-            {% set sports = entries('champions', 'sport').paginate() %}
+            {% set sports = entries('champions', 'sport').get() %}
             {{ sports.render() }}
             {% for sport in sports %}
                 <option>{{ sport.name }} </option>
@@ -38,7 +37,22 @@
     <div class="col-md-4"></div>
 </div><br>
     </form>
-    <div id="championsScores">
-
+<section class="blog-section">
+<div class="container">
+    <div class="blog-post">
+    <div class="col-md-4" >
+        <h2 style="color: #b79a00 ">First Place</h2>
+        <hr>
+        <div id="firstPlace"></div>
     </div>
-{% endblock %}
+    <div class="col-md-4" >
+        <h2 style="color: #9a9a9a ">Second Place</h2><hr>
+        <div id="secondPlace"></div>
+    </div>
+    <div class="col-md-4" >
+        <h2 style="color: #cd7f32 ">Third Place</h2><hr>
+        <div id="thirdPlace"></div>
+    </div>
+    </div>
+</div>
+</section>

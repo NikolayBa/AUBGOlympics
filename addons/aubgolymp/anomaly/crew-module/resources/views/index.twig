@@ -1,5 +1,4 @@
-{% block content %}
-    {% set crew = entries('crew', 'people').paginate() %}
+    {% set crew = entries('crew', 'people').get() %}
     {{ crew.render()|raw }}
     <div class="project-box iso-call">
         {% for member in crew %}
@@ -12,4 +11,3 @@
         </div>
         {% endfor %}
     </div>
-{% endblock %}
