@@ -23,7 +23,7 @@ class AnomalyModuleGalleryCreateGalleryFields extends Migration
         'semester' => [
             'type' => 'anomaly.field_type.relationship',
             'config' => [
-                'title_name' => 'title',
+                'title_name' => 'title_column',
                 'mode' => 'dropdown',
                 'related' => SemesterModel::class
             ]

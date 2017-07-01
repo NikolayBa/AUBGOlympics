@@ -12,7 +12,7 @@ class AnomalyModuleSponsorsCreateSponsorsFields extends Migration
      */
     protected $fields = [
         'title' => 'anomaly.field_type.text',
-        'link' => 'anomaly.field_type.text',
+        'link' => 'anomaly.field_type.url',
         'logo' => 'anomaly.field_type.file'
     ];
 

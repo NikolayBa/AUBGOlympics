@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 use Anomaly\ChampionsModule\Event\EventModel;
 use Anomaly\ChampionsModule\Semester\SemesterModel;

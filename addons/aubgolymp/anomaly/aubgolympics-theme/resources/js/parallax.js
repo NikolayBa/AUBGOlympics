@@ -93,89 +93,6 @@ $(document).ready(function() {
     $('#secBG').attr('src',picTwo);
     var picThree = $('#thirdImage').find('img:first').attr('src');
     $('#thirdBG').attr('src',picThree);
-    /*$.ajax({
-     type: "POST",
-     url: './submit/fillSemester',
-     cache: false,
-     contentType: false,
-     processData: false,
-     success: function(data){
-         window.alert(data);
-     },
-     error: function (error) {
-     $('#result').append("We have encountered an" +
-     " error while submitting your article!")
-     }
-     });*/
-    //
-    // $("#semester").change(function() {
-    //     // $.ajaxSetup({
-    //     //     headers: {
-    //     //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]')
-    //     //             .attr('content')
-    //     //     }
-    //     // });
-    //     /*var semester = $('#semester').val();
-    //     window.alert(semester);*/
-    //     $.ajax({
-    //      type: "POST",
-    //      url: './submit/fillSemester',
-    //      cache: false,
-    //      contentType: false,
-    //      processData: false,
-    //      success: function(response){
-    //      if(response == "Success!"){
-    //      $('#result').append("You have successfully" +
-    //      " submitted your article!");
-    //      }
-    //      },
-    //      error: function (error) {
-    //      $('#result').append("We have encountered an" +
-    //      " error while submitting your article!")
-    //      }
-    //      });
-    //     return false;
-    //
-    // });
-
-    $('#register').on('click', function(){
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $.ajax({
-            type: "POST",
-            url: './register',
-            cache: false,
-            success: function(){
-                location.href = "http://www.dev.aubgolympics.com/register"
-            },
-            error: function (error) {
-            }
-        });
-        return false;
-    });
-
-    $('#logmein').on('click', function(){
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $.ajax({
-            type: "POST",
-            url: './login',
-            cache: false,
-            success: function(){
-                location.href = "http://www.dev.aubgolympics.com/login"
-            },
-            error: function (error) {
-            }
-        });
-        return false;
-    });
-
 
 });
 
@@ -188,11 +105,6 @@ function showResults(){
     });
     var formData = $('form')[0];
     var dataObj = new FormData(formData);
-    // var specifications = [];
-    // specifications['semester'] = $('#semester').val();
-    // specifications['event'] = $('#events_select').val();
-    // specifications['sport'] = $('#sports').val();
-    // console.log(specifications);
     $.ajax({
         type: "POST",
         url: './champions/show_results',

@@ -69,7 +69,9 @@ body, html{
     font-size:45pt;
     display: inline-block;
 }
-
+.orange{
+    color: #f39c12;
+}
 #orange{
     color: #f39c12;
     background-color: #f39c12;
@@ -1294,3 +1296,20 @@ header.active .navbar-nav > li > a.active {
     -moz-background-size: cover;
     -o-background-size: cover;
 }
+.show_results {
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 14px;
+    background: #f39c12;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+}
+
+.show_results:hover {
+    background: #f39c12;
+    text-decoration: none;
+}
+
